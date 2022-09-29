@@ -42,6 +42,6 @@ server1.get("/api/1/products", function(req,res){
         }
 )})
 
-server1.listen(80, function(){
+server1.listen(3001, function(){
     console.log("已啟動")
 })
