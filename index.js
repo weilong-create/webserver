@@ -8,7 +8,7 @@ var connection = mysql.createConnection({
   password: '!Fmsu153426',
   port:3306,
   host: 'localhost',
-  database: 'stylish2',
+  database: 'stylish',
 })
 
 server1.get("/api/1/products/:category", function(req,res){
