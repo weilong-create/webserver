@@ -27,6 +27,23 @@ function (error, results, fields) {
     }
 )})
 
+var server1=express();
+server1.get("/", function(req,res){
+    res.send("Hello,my Server")
+})
+
+// server1.get("/api/1/products/search", function(req,res){
+//     const keyword=req.query.keyword
+//     connection.query(`SELECT * from products where product_name like '%${keyword}' LIMIT ?,?`,[paging*6,6],
+//     function (error, results, fields) {
+//         if (error) {throw error}
+//         else{
+//              test=JSON.stringify(results)
+//              res.send(test)
+//         }
+//         }
+//     )})
+
 server1.get("/api/1/products", function(req,res){
     const paging=req.query.paging;
     if(paging===undefined){
