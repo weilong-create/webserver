@@ -2,19 +2,21 @@ var express=require("express");
 var server1=express();
 var mysql = require('mysql');
 var test={}
+require('dotenv').config();
+var user,password
 
 var connection = mysql.createConnection({
-  user: 'root',
-  password: '!Fmsu153426',
-  port:3306,
-  host: 'localhost',
-  database: 'stylish',
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    host: process.env.HOST,
+    database: process.env.DATABASE
 })
+
 
 
 server1.get("/api/1/products/search", function(req,res){
     const keyword=req.query.keyword
-    connection.query(`SELECT * from products where product_name LIke '%${keyword}'`,
+    connection.query(`SELECT * from products where product_name LIke "%${keyword}%"`,
     function (error, results, fields) {
         if (error) {throw error}
         else{
@@ -23,6 +25,7 @@ server1.get("/api/1/products/search", function(req,res){
         }
         }
     )})
+
 
 
 server1.get("/api/1/products/:category", function(req,res){
@@ -40,6 +43,9 @@ function (error, results, fields) {
     }
     }
 )})
+
+
+
 
 server1.get("/api/1/products", function(req,res){
     const paging=req.query.paging;
