@@ -3,7 +3,6 @@ var server1=express();
 var mysql = require('mysql');
 var test={}
 require('dotenv').config();
-var user,password
 
 var connection = mysql.createConnection({
     user: process.env.USER,
