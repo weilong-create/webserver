@@ -2,7 +2,7 @@ var express=require("express");
 var server1=express();
 var mysql = require('mysql');
 var test={}
-require('dotenv').config();
+
 
 var connection = mysql.createConnection({
   user: 'root',
