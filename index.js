@@ -35,13 +35,13 @@ function (error, results, fields) {
     else{
         test['stock']=results 
     }})
-    connection.query( `SELECT image.img_url
-    from image where image.p_id=?`,[id],
-    function (error, results, fields) {
-    if (error) {throw error}
-    else{
-        test['image']=results    
-    }})
+    // connection.query( `SELECT image.img_url
+    // from image where image.p_id=?`,[id],
+    // function (error, results, fields) {
+    // if (error) {throw error}
+    // else{
+    //     test['image']=results    
+    // }})
 
     res.send(test)
 })
