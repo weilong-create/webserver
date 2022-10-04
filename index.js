@@ -15,7 +15,7 @@ var connection = mysql.createConnection({
     user: 'root',
     password: '!Fmsu153426',
     host: 'localhost',
-    database: 'stylish2',
+    database: 'stylish',
 })
 
 server1.get("/api/1/products/details", function(req,res){
