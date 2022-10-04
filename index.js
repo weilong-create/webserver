@@ -12,10 +12,10 @@ var path=require('path');
 
 
 var connection = mysql.createConnection({
-    user: 'root',
-    password: '!Fmsu153426',
-    host: 'localhost',
-    database: 'stylish',
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    host: process.env.HOST,
+    database: process.env.DATABASE
 })
 
 server1.get("/api/1/products/details", function(req,res){
