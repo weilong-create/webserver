@@ -2,7 +2,7 @@ var express=require("express");
 var server1=express();
 var mysql = require('mysql');
 var test=[{}]
-require('dotenv').config();
+
 var path=require('path');
 
 // server1.use('/api/1/products/admin/product.html',express.static(path.join(__dirname,'/public')))
@@ -10,12 +10,12 @@ var path=require('path');
 //     res.sendFile(__dirname+"/public/product.html")
 // })
 
-
+require('dotenv').config();
 var connection = mysql.createConnection({
-    user: 'root',
-    password: '!Fmsu153426',
-    host: 'localhost',
-    database: 'stylish',
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    host: process.env.HOST,
+    database: process.env.DATABASE
 })
 
 server1.get("/api/1/products/details", function(req,res){
