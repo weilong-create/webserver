@@ -35,7 +35,8 @@ function (error, results, fields) {
     function (error, results, fields) {
     if (error) {throw error}
     else{
-        test['stock']=results 
+        test['stock']=results
+         
     }})
     connection.query( `SELECT image.img_url
     from image where image.p_id=?`,[id],
@@ -43,7 +44,7 @@ function (error, results, fields) {
     if (error) {throw error}
     else{
         test['image']=results
-        res.send(test) 
+        res.send(test)
     }})
 
     
