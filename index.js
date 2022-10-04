@@ -18,6 +18,8 @@ var connection = mysql.createConnection({
     database: process.env.DATABASE
 })
 
+console.log(process.env.PASSWORD)
+
 server1.get("/api/1/products/details", function(req,res){
     var id=req.query.id;
     connection.query( `SELECT products.*,category.*
