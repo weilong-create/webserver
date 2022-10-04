@@ -12,10 +12,10 @@ var path=require('path');
 
 require('dotenv').config();
 var connection = mysql.createConnection({
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    host: process.env.HOST,
-    database: process.env.DATABASE
+    user: 'root',
+    password: '!Fmsu153426',
+    host: 'localhost',
+     database: 'stylish',
 })
 
 console.log(process.env.PASSWORD)
