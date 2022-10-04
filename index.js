@@ -2,14 +2,13 @@ var express=require("express");
 var server1=express();
 var mysql = require('mysql');
 var test={}
-
+require('dotenv').config();
 
 var connection = mysql.createConnection({
-  user: 'root',
-  password: '!Fmsu153426',
-  port:3306,
-  host: 'localhost',
-  database: 'stylish',
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    host: process.env.HOST,
+    database: process.env.DATABASE
 })
 
 
