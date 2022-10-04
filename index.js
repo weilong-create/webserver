@@ -42,10 +42,11 @@ function (error, results, fields) {
     function (error, results, fields) {
     if (error) {throw error}
     else{
-        test['image']=results    
+        test['image']=results
+        res.send(test) 
     }})
 
-    res.send(test)
+    
 })
 
 
